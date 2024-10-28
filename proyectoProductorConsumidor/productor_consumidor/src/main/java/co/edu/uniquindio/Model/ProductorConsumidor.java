@@ -1,31 +1,32 @@
 package co.edu.uniquindio.Model;
+
 import java.util.Queue;
+import java.util.LinkedList;
 
 class ProductorConsumidor{
-    private Queue<Integer> lavadero = new LinkedList<>;
+    private Queue<Vehiculo> vehiculosLavando = new LinkedList<>();
+    private Queue<Vehiculo> vehiculosLavados = new LinkedList<>();
     private final int CAPACIDAD = 5;
-
-    public synchronized void ingresarCarro() throws InterruptedException{
-        int carro = 0;
-        while (true) {
-            while (lavadero.size() == CAPACIDAD){
-                wait();
+    
+    public synchronized void ingresarCarro(Vehiculo vehiculo) throws InterruptedException{
+            if(vehiculosLavando.size() == CAPACIDAD){
+                System.out.println("No se pueden ingresar más vehículos.");
             }
-            System.out.println("Productor produce: " + carro);
-            lavadero.add(carro);
-            carro++;
+            System.out.println("Ingresando carro: " + vehiculo.getReferenciaVehiculo());
+            vehiculosLavando.add(vehiculo);
             notify();
-            Thread.sleep(2500);
-        }
-    }
+            }
 
     public synchronized void lavarCarro() throws InterruptedException{
         while (true) {
-            while (lavadero.isEmpty()){
+            while (vehiculosLavando.isEmpty()){
                 wait();
             }
-            int elemento = lavadero.poll();
-            System.out.println();
+            Vehiculo vehiculoLavado = vehiculosLavando.poll();
+            System.out.println("Vehiculo listo: "+ vehiculoLavado + " ");
+            vehiculosLavados.add(vehiculoLavado);
+            notify();
+            Thread.sleep(5000);
         }
     }
 }
