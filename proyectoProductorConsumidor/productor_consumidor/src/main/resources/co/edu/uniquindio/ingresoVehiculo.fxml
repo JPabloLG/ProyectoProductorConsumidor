@@ -15,18 +15,18 @@
             <Image url="@Imagenes/lavaCars_fondo.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txt_propietario" layoutX="182.0" layoutY="168.0" prefHeight="26.0" prefWidth="266.0" style="-fx-border-color: #007bff; -fx-background-color: #adddfe;" />
-      <TextField fx:id="txt_marca" layoutX="182.0" layoutY="216.0" prefHeight="26.0" prefWidth="266.0" style="-fx-border-color: #007bff; -fx-background-color: #adddfe;" />
-      <TextField fx:id="txt_placa" layoutX="182.0" layoutY="266.0" prefHeight="26.0" prefWidth="266.0" style="-fx-border-color: #007bff; -fx-background-color: #adddfe;" />
-      <Button fx:id="btn_ingresar" layoutX="189.0" layoutY="316.0" mnemonicParsing="false" onAction="#btn_ingresar" prefHeight="35.0" prefWidth="126.0" style="-fx-background-color: #007bff;" text="Ingresar vehiculo" textFill="#88e9ff">
+      <TextField fx:id="txt_propietario" layoutX="182.0" layoutY="168.0" prefHeight="26.0" prefWidth="266.0" style="-fx-border-color: #007bff; -fx-background-color: #adddfe; -fx-border-radius: 10; -fx-background-radius: 10;" />
+      <TextField fx:id="txt_marca" layoutX="182.0" layoutY="216.0" prefHeight="26.0" prefWidth="266.0" style="-fx-border-color: #007bff; -fx-background-color: #adddfe; -fx-background-radius: 10; -fx-border-radius: 10;" />
+      <TextField fx:id="txt_placa" layoutX="182.0" layoutY="266.0" prefHeight="26.0" prefWidth="266.0" style="-fx-border-color: #007bff; -fx-background-color: #adddfe; -fx-background-radius: 10; -fx-border-radius: 10;" />
+      <Button fx:id="btn_ingresar" layoutX="189.0" layoutY="316.0" mnemonicParsing="false" onAction="#btn_ingresar" prefHeight="35.0" prefWidth="126.0" style="-fx-background-color: #007bff; -fx-background-radius: 10;" text="Ingresar vehiculo" textFill="#88e9ff">
          <font>
             <Font name="Berlin Sans FB" size="14.0" />
          </font>
       </Button>
       <TextArea fx:id="txt_autosListos" layoutX="36.0" layoutY="417.0" prefHeight="158.0" prefWidth="414.0" style="visibility: false;" />
       <TextArea fx:id="txt_autosLavando" layoutX="535.0" layoutY="154.0" prefHeight="205.0" prefWidth="326.0" style="visibility: false;" />
-      <TextField fx:id="txt_placa_retirar" layoutX="621.0" layoutY="434.0" prefHeight="27.0" prefWidth="240.0" style="-fx-border-color: #007bff; -fx-background-color: #adddfe;" />
-      <Button fx:id="btn_ingresar1" layoutX="635.0" layoutY="496.0" mnemonicParsing="false" onAction="#btn_ingresar" prefHeight="35.0" prefWidth="126.0" style="-fx-background-color: #007bff;" text="Retirar vehiculo" textFill="#88e9ff">
+      <TextField fx:id="txt_placa_retirar" layoutX="621.0" layoutY="434.0" prefHeight="27.0" prefWidth="240.0" style="-fx-border-color: #007bff; -fx-background-color: #adddfe; -fx-background-radius: 10; -fx-border-radius: 10;" />
+      <Button fx:id="btn_ingresar1" layoutX="635.0" layoutY="496.0" mnemonicParsing="false" onAction="#btn_ingresar" prefHeight="35.0" prefWidth="126.0" style="-fx-background-color: #007bff; -fx-background-radius: 10;" text="Retirar vehiculo" textFill="#88e9ff">
          <font>
             <Font name="Berlin Sans FB" size="14.0" />
          </font>
