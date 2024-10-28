@@ -4,20 +4,24 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**
- * JavaFX App
- */
 public class App extends Application {
 
     private static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        scene = new Scene(loadFXML("ingresoVehiculo"), 900, 600);
+
+        stage.setTitle("LavaCars - Lobby");
+
+        Image logo = new Image(getClass().getResourceAsStream("imagenes/lavaCars_logo.png"));
+        stage.getIcons().add(logo);
+
         stage.setScene(scene);
         stage.show();
     }
