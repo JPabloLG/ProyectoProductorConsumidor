@@ -20,16 +20,5 @@ public class Lavacars {
 
     public LinkedList<Vehiculo> getVehiculosLavando() {
         return vehiculosLavando;
-    }
-
-    /*public void agregarVehiculoLavando(Vehiculo vehiculo){
-        if (validarVehiculo() == true){
-        this.vehiculosLavando.add(vehiculo);}
-    }
-
-    public boolean validarVehiculo(Vehiculo vehiculo){
-        vehiculo.getPlaca;
-    }*/
-
-    
+    } 
 }
