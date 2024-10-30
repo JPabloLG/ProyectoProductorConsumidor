@@ -5,7 +5,8 @@ import java.util.LinkedList;
 public class Lavacars {
     private static Lavacars instanciaUnica;
     public String nombre = "LavaCars";
-    public LinkedList<Vehiculo> vehiculosLavando;
+    public Tuberia tuberia;
+    public Cliente_Consumidor consumidor;
 
     public static Lavacars getInstanciaUnica() {
         if(instanciaUnica == null){
@@ -14,11 +15,4 @@ public class Lavacars {
         return instanciaUnica;
     }
 
-    public Lavacars() {
-        this.vehiculosLavando = new LinkedList<>();
-    }
-
-    public LinkedList<Vehiculo> getVehiculosLavando() {
-        return vehiculosLavando;
-    } 
 }

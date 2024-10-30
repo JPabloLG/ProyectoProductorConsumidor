@@ -24,14 +24,18 @@ public class IngresoVehiculoController {
     private TextArea txt_autos;
 
     @FXML
-    private TextArea txt_autosListos;
-
-    @FXML
     private TextField txt_placa_retirar;
+
+    Lavacars lavadero = Lavadero.getInstanciaUnica();
 
     @FXML
     void btn_ingresar(ActionEvent event) {
+        String placa = txt_placa_retirar.getText();
+        Cliente_Consumidor consumidor = new Cliente_Consumidor();
+    }
 
+    public void mostrarMensaje(String mensaje){
+        txt_autos.setText(mensaje);
     }
 
     @FXML
