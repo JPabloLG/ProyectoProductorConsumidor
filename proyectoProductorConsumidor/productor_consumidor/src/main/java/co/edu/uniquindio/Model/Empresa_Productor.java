@@ -27,9 +27,10 @@ public class Empresa_Productor {
 
                 for (String auto : autosLavando){
                     tuberia.producir(auto);
-
+                    
                     String mensaje = "Auto producido" + auto;
                     channel.basicPublish("", QUEUE_NAME, null, mensaje.getBytes());
+                    
                     System.out.println(" Prdocutor envió mensaje a RabbitMQ: " + mensaje);
                 }
             }

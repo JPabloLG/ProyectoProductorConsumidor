@@ -15,8 +15,12 @@
             <Image url="@Imagenes/lavaCars_fondo.png" />
          </image>
       </ImageView>
-      <TextArea fx:id="txt_autos" layoutX="126.0" layoutY="245.0" prefHeight="218.0" prefWidth="646.0" style="visibility: false;" />
       <TextField fx:id="txt_placa_retirar" layoutX="258.0" layoutY="506.0" prefHeight="27.0" prefWidth="240.0" style="-fx-border-color: #007bff; -fx-background-color: #adddfe; -fx-background-radius: 10; -fx-border-radius: 10;" />
+      <TextArea fx:id="txt_autos" layoutX="127.0" layoutY="246.0" prefHeight="215.0" prefWidth="644.0">
+         <font>
+            <Font name="Berlin Sans FB" size="23.0" />
+         </font>
+      </TextArea>
       <Button fx:id="btn_ingresar1" layoutX="515.0" layoutY="502.0" mnemonicParsing="false" onAction="#btn_ingresar" prefHeight="35.0" prefWidth="126.0" style="-fx-background-color: #007bff; -fx-background-radius: 10;" text="Retirar vehiculo" textFill="#88e9ff">
          <font>
             <Font name="Berlin Sans FB" size="14.0" />

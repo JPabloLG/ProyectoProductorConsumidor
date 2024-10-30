@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import java.util.concurrent.TimeoutException;
 
 import co.edu.uniquindio.Model.Cliente_Consumidor;
+import co.edu.uniquindio.Model.Empresa_Productor;
 import co.edu.uniquindio.Model.Lavacars;
 import co.edu.uniquindio.Model.Tuberia;
 import javafx.event.ActionEvent;
@@ -36,7 +37,10 @@ public class IngresoVehiculoController {
     @FXML
     void btn_ingresar(ActionEvent event) throws IOException, TimeoutException {
         String placa = txt_placa_retirar.getText();
+        txt_autos.setText("El auto con placa " + placa + " se consumió");
         Tuberia tuberia = new Tuberia(5);
+        tuberia.consumir(placa);
+        Empresa_Productor productor = new Empresa_Productor(tuberia);
         Cliente_Consumidor consumidor = new Cliente_Consumidor(tuberia, this, placa);
         consumidor.run();
     }

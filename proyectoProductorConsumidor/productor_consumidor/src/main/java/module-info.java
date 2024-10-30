@@ -2,7 +2,7 @@ module co.edu.uniquindio {
     requires javafx.controls;
     requires javafx.fxml;
     requires com.rabbitmq.client;
-    requires java.sql;
+    requires java.sql.rowset;
 
     opens co.edu.uniquindio to javafx.fxml;
     exports co.edu.uniquindio;
@@ -12,6 +12,8 @@ module co.edu.uniquindio {
 
     opens co.edu.uniquindio.Model;
     exports co.edu.uniquindio.Model;
+
+
 
 }
 
