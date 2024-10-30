@@ -4,7 +4,15 @@ import co.edu.uniquindio.Controller.IngresoVehiculoController;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.DefaultConsumer;
+import com.rabbitmq.client.Envelope;
+import java.nio.charset.StandardCharsets;
+import com.rabbitmq.client.AMQP;
+
+
+
 import java.io.IOException;
+import java.util.concurrent.TimeoutException;
 
 public class Cliente_Consumidor implements Runnable {
 
@@ -16,7 +24,7 @@ public class Cliente_Consumidor implements Runnable {
     private Channel channel;
     private volatile boolean running;
 
-    public Cliente_Consumidor(Tuberia tuberia, IngresoVehiculoController controller, String placaSolicitada) throws IOException{
+    public Cliente_Consumidor(Tuberia tuberia, IngresoVehiculoController controller, String placaSolicitada) throws IOException, TimeoutException{
         this.tuberia = tuberia;
         this.controller = controller;
         this.placaSolicitada = placaSolicitada;
@@ -53,10 +61,10 @@ public class Cliente_Consumidor implements Runnable {
         }).start();
 
 
-        try{
-            channel.basicConsume(QUEUE_NAME, false, new DefaultConsumer(channel)){
+        try {
+            channel.basicConsume(QUEUE_NAME, false, new DefaultConsumer(channel) {
                 @Override
-                public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties){
+                public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
                     String mensaje = new String(body, StandardCharsets.UTF_8);
                     System.out.println("Mensaje recibido: " + mensaje);
 

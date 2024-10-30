@@ -1,6 +1,8 @@
 module co.edu.uniquindio {
     requires javafx.controls;
     requires javafx.fxml;
+    requires com.rabbitmq.client;
+    requires java.sql;
 
     opens co.edu.uniquindio to javafx.fxml;
     exports co.edu.uniquindio;

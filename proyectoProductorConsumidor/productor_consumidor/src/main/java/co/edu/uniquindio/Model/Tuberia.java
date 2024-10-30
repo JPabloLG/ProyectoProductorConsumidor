@@ -1,5 +1,8 @@
 package co.edu.uniquindio.Model;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Tuberia {
     private Queue<String> buffer;
     private int capacidad;
@@ -10,7 +13,7 @@ public class Tuberia {
     }
 
     public synchronized void producir(String placa) throws InterruptedException {
-        while(buffer.size == capacidad){
+        while(buffer.size() == capacidad){
             wait();
         }
         buffer.add(placa);
